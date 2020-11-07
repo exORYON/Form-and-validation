@@ -1,2 +1,2 @@
 # Form-and-validation
-Choose only files from your site`s root folder.
+Files uploading is working only after downloading and choosing images from your root folder.
