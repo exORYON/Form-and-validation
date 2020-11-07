@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+        <style>
+            body {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .get-back-container {
+                width: 100vw;
+                display: inline-flex;
+                align-items: flex-start;
+                justify-content: flex-start;
+            }
+
+            .get-back-container a {
+                margin-left: 25px;
+            }
+
+            #result {
+                font-family: sans-serif;
+                margin: 20px;
+            }
+        </style>
+</head>
+
+<body>
+    <div class="get-back-container">
+        <a href="index.html" style="text-decoration: none; font-size: 50px; color: black;">&larr; get back</a>
+    </div>
+        <div id="result"></div>
+    <script>
+        let imgSrc = "";
+        const result = document.getElementById("result");
+        new URLSearchParams(window.location.search).forEach((value, name) => {
+            if (name === "file") {
+                imgSrc = value;
+            } else {
+                result.append(`Your ${name} is: ${value}`);
+                result.append(document.createElement("br"));
+            }
+        })
+
+        let img = document.createElement('img');
+        document.body.append(img);
+        img.src = imgSrc;
+    </script>
+</body>
+
+</html>
